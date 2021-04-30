@@ -10,7 +10,7 @@ Make sure you have Python 3.9 [installed locally](https://docs.python-guide.org/
 
 ```sh
 $ git clone https://github.com/toddgraham121/cs510-heart-attack-analysis/
-$ cd python-getting-started
+$ cd heart-attack-analysis
 
 $ python3 -m venv getting-started
 $ pip install -r requirements.txt
