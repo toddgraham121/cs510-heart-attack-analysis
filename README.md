@@ -12,10 +12,10 @@ Make sure you have Python 3.9 [installed locally](https://docs.python-guide.org/
 $ git clone https://github.com/toddgraham121/cs510-heart-attack-analysis/
 $ cd heart-attack-analysis
 
-$ python3 -m venv getting-started
+$ python3 -m venv heart-attack-analysis
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
+$ createdb python_heart-attack-analysis
 
 $ python manage.py migrate
 $ python manage.py collectstatic
