@@ -4,3 +4,6 @@ staticfiles
 .env
 db.sqlite3
 getting-started/*
+bin/
+lib/
+pyvenv.cfg
