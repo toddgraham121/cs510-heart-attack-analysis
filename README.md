@@ -19,8 +19,14 @@ $ createdb python_heart-attack-analysis
 
 $ python manage.py migrate
 $ python manage.py collectstatic
-
+```
+On Mac:
+```
 $ heroku local
+```
+On Windows:
+```
+$ heroku local web -f Procfile.windows
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
@@ -37,6 +43,8 @@ $ heroku open
 or
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+The deployed app can be found at [this link](https://heart-attack-analysis.herokuapp.com/).
 
 ## Documentation
 
