@@ -1,8 +1,10 @@
-# Python: Getting Started
+# Heart Disease Analysis
 
-A barebones Django app, which can easily be deployed to Heroku.
+This is a Django app, which contains a dashboard visualizing the data from [four databases: Cleveland, Hungary, Switzerland, and Long Beach V](https://www.kaggle.com/johnsmith88/heart-disease-dataset). In addition to the dashboard, we have trained and tested five different machine learning classifiers on the data: random forest, logistic regression, naive bayes, support vector machine and a feedforward neural network. The training and test results are found in the Django app under the Symptom Checker tab. The classifier with the highest test accuracy (feedforward neural network) is deployed on the webapp. 
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+## Deployed Webapp
+
+[Heart Disease Analysis](https://heart-attack-analysis.herokuapp.com/)
 
 ## Running Locally
 
@@ -43,8 +45,6 @@ $ heroku open
 or
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-The deployed app can be found at [this link](https://heart-attack-analysis.herokuapp.com/).
 
 ## Documentation
 
