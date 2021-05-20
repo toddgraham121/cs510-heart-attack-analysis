@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
+import sklearn
 import os
 from .forms import PredictionForm
 # Create your views here.
