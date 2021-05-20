@@ -1,8 +1,9 @@
 import hello.views
 from django.urls import path, include
-
 from django.contrib import admin
-
+import classifier.views
+from django.conf import settings
+from django.conf.urls.static import static
 admin.autodiscover()
 
 
@@ -17,5 +18,10 @@ admin.autodiscover()
 urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
+    path("classifier/", classifier.views.index, name="classifier"),
+    path("classifier/results/", classifier.views.results,
+         name="classifier-results"),
     path("admin/", admin.site.urls),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

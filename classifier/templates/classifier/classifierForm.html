@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1>Heart Attack Classifier</h1>
+        <p>In this project we are going to create a dashboard and use a ML classifier to check if symptoms match up with
+            a MI.</p>
+    </div>
+</div>
+<form action="results/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Get Prediction">
+</form>
+{% endblock %}
