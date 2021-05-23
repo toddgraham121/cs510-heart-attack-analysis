@@ -22,6 +22,8 @@ urlpatterns = [
     path("classifier/", classifier.views.index, name="classifier"),
     path("classifier/results/", classifier.views.results,
          name="classifier-results"),
+    path("techniques/", classifier.views.techniques,
+         name="classifier-techniques"),
     path("admin/", admin.site.urls),
 ]
 

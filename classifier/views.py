@@ -37,6 +37,10 @@ def results(request):
     return render(request, 'classifier/result.html', {'result': result})
 
 
+def techniques(request):
+    return render(request, 'classifier/techniques.html')
+
+
 def getPredictions(age, sex, chestPainScore, restingBP, cholesterol, fastingGlucose, maxHeartRate, exerciseAngina):
     import pickle
     modelFolder = settings.BASE_DIR + '/model/'
