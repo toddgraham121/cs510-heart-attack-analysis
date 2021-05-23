@@ -19,3 +19,7 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
+
+
+def about(request):
+    return render(request, "about.html")
