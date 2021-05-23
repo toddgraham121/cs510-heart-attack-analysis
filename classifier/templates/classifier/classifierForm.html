@@ -12,7 +12,11 @@
 </div>
 <form action="results/" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Get Prediction">
+    <table>
+    {{ form.as_table }}
+    </table>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary mb-2">Get Prediction</button>
+    </div>
 </form>
 {% endblock %}

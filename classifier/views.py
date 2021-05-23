@@ -24,25 +24,20 @@ def results(request):
     if form.is_valid():
         age = form.cleaned_data['age']
         sex = 1 if form.cleaned_data['sex'] == 'male' else 0
-        cp = form.cleaned_data['cp']
-        trestbps = form.cleaned_data['trestbps']
-        chol = form.cleaned_data['chol']
-        fbs = form.cleaned_data['fbs']
-        restecg = form.cleaned_data['restecg']
-        thalach = form.cleaned_data['thalach']
-        exang = form.cleaned_data['exang']
-        oldpeak = form.cleaned_data['oldpeak']
-        slope = form.cleaned_data['slope']
-        ca = form.cleaned_data['ca']
-        thal = form.cleaned_data['thal']
+        chestPainScore = form.cleaned_data['chestPainScore']
+        restingBP = form.cleaned_data['restingBP']
+        cholesterol = form.cleaned_data['cholesterol']
+        fastingGlucose = 1 if form.cleaned_data['fastingGlucose'] == 'yes' else 0
+        maxHeartRate = form.cleaned_data['maxHeartRate']
+        exerciseAngina = 1 if form.cleaned_data['exerciseAngina'] == 'yes' else 0
 
-    result = getPredictions(age, sex, cp, trestbps, chol,
-                            fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
+    result = getPredictions(age, sex, chestPainScore, restingBP, cholesterol,
+                            fastingGlucose, maxHeartRate, exerciseAngina)
 
     return render(request, 'classifier/result.html', {'result': result})
 
 
-def getPredictions(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal):
+def getPredictions(age, sex, chestPainScore, restingBP, cholesterol, fastingGlucose, maxHeartRate, exerciseAngina):
     import pickle
     modelFolder = settings.BASE_DIR + '/model/'
     model = pickle.load(
@@ -50,7 +45,7 @@ def getPredictions(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, o
     scaler = pickle.load(
         open(os.path.join(modelFolder, os.path.basename("scaler.pkl")), "rb"))
     prediction = model.predict(scaler.transform(
-        [[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]]))
+        [[age, sex, chestPainScore, restingBP, cholesterol, fastingGlucose, maxHeartRate, exerciseAngina]]))
 
     if prediction == 0:
         return "No Cardiac Disease"
