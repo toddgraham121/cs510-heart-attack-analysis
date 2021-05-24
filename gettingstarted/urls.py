@@ -24,6 +24,8 @@ urlpatterns = [
          name="classifier-results"),
     path("techniques/", classifier.views.techniques,
          name="classifier-techniques"),
+    path('techniques/<int:technique_id>',
+         classifier.views.techniquesDetails, name='techniqueDetails'),
     path("admin/", admin.site.urls),
 ]
 

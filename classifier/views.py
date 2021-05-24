@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
+from .models import Technique
 import sklearn
 import os
 from .forms import PredictionForm
@@ -38,7 +39,13 @@ def results(request):
 
 
 def techniques(request):
-    return render(request, 'classifier/techniques.html')
+    ml_techniques = Technique.objects.order_by('-accuracy')
+    return render(request, 'classifier/techniques.html', {'ml_techniques': ml_techniques})
+
+
+def techniquesDetails(request, technique_id):
+    techniqueDetail = get_object_or_404(Technique, pk=technique_id)
+    return render(request, 'classifier/techniqueDetail.html', {'techniqueDetail': techniqueDetail})
 
 
 def getPredictions(age, sex, chestPainScore, restingBP, cholesterol, fastingGlucose, maxHeartRate, exerciseAngina):

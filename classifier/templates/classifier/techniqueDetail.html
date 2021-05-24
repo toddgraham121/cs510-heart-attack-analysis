@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1></h1>
+    </div>
+</div>
+
+<main>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <h1 class="fw-light">{{ techniqueDetail.technique_type }}</h1>
+                <br>
+                <h3 class="fw-light">{{ techniqueDetail.description }}</h3>
+                <br>
+                <p class="lead text-muted">Accuracy: {{ techniqueDetail.accuracy }}%</p>
+                <p class="lead text-muted">Precision: {{ techniqueDetail.precision }}%</p>
+                <p class="lead text-muted">Recall: {{ techniqueDetail.recall }}%</p>
+                <p>
+                    <a href="/techniques/" class="btn btn-primary my-2">Back</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
