@@ -1,4 +1,9 @@
-<div class='tableauPlaceholder' id='viz1621544277443' style='position: relative'>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class='tableauPlaceholder' id='viz1621993120469' style='position: relative'>
 <noscript><a href='#'><img alt='Heart Attack Analysis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;He&#47;Heart-Attack-Analysis&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
 <object class='tableauViz'  style='display:none;'>
 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
@@ -17,7 +22,7 @@
 </div>                
 
 <script type='text/javascript'>
-    var divElement = document.getElementById('viz1621544277443');
+    var divElement = document.getElementById('viz1621993120469');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if ( divElement.offsetWidth > 800 ) { 
         vizElement.style.width='1000px';vizElement.style.height='827px';
@@ -32,3 +37,5 @@
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
+
+{% endblock %}
