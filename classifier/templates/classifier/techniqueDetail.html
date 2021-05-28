@@ -6,29 +6,27 @@
 
 <div class="jumbotron text-center">
     <div class="container">
-        <h1></h1>
+        <h1>{{ techniqueDetail.technique_type }}</h1>
     </div>
 </div>
-
-<main>
-
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-10 col-md-10 mx-auto">
-                <h1 class="fw-light">{{ techniqueDetail.technique_type }}</h1>
-                <br>
-                <h3 class="fw-light">{{ techniqueDetail.description }}</h3>
-                <br>
-                <p class="lead text-muted">Accuracy: {{ techniqueDetail.accuracy }}%</p>
-                <p class="lead text-muted">Precision: {{ techniqueDetail.precision }}%</p>
-                <p class="lead text-muted">Recall: {{ techniqueDetail.recall }}%</p>
-                <p>
-                    <a href="/techniques/" class="btn btn-primary my-2">Back</a>
-                </p>
-            </div>
+<div class="text-center container">
+    <div class="row">
+        <div class="col-sm">
+            <h5>Accuracy: {{ techniqueDetail.accuracy }}%</h5>
         </div>
-    </section>
-
-</main>
+        <div class="col-sm">
+            <h5>Precision: {{ techniqueDetail.precision }}%</h5>
+        </div>
+        <div class="col-sm">
+            <h5>Recall: {{ techniqueDetail.recall }}%</h5>
+        </div>
+    </div>
+    <br>
+    <p><b>Description:</b> {{ techniqueDetail.description }}<a href="{{ techniqueDetail.url }}"> [source]</a></p>
+    <br>
+    <p>
+        <a href="/techniques/" class="btn btn-primary my-2">Back</a>
+    </p>
+</div>
 
 {% endblock %}
