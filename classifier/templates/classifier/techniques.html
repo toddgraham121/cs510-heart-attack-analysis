@@ -6,28 +6,24 @@
 <div class="jumbotron text-center">
     <div class="container">
         <h1>Machine Learning Techniques</h1>
+        <p>Each of the following classifiers were trained on 80% of the dataset and tested with the remaining 20%. The data was preprocessed in a similar manner for each of the classifiers. Further information can be accessed on each of classifiers by clicking "More Info".</p>
     </div>
 </div>
 <div class="album py-5">
     <div class="container">
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for technique in ml_techniques.all %}
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ technique.technique_type }}</h5>
-                        <p class="card-text">Description: {{ technique.description }}</p>
-                        <p class="card-text">Accuracy: {{ technique.accuracy }}%</p>
-                        <a href="{% url 'techniqueDetails' technique.id %}">More info</a>
-                    </div>
-                </div>
+    <div class="card-deck">
+        {% for technique in ml_techniques.all %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ technique.technique_type }}</h5>
+                <p class="card-text">Accuracy: {{ technique.accuracy }}%</p>
+                <p class="card-text">
+                    <a href="{% url 'techniqueDetails' technique.id %}">More info</a>
+                </p>
             </div>
-
-            {% endfor %}
-
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
