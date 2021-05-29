@@ -27,3 +27,6 @@ def about(request):
 
 def dashboard(request):
     return render(request, "dashboard.html")
+
+def dashboard2(request):
+    return render(request, "dashboard2.html")
