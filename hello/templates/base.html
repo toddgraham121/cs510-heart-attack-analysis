@@ -3,7 +3,7 @@
 {% load static %}
 
 <head>
-  <title>Heart Disease Analysis</title>
+  <title>Cardiac Disease Analysis</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -15,22 +15,22 @@
   <link rel="icon" href="{% static 'favicon.ico' %}">
   <style type="text/css">
     .jumbotron {
-      background: #532f8c;
+      background: #1f417e;
       color: white;
       padding-bottom: 80px
     }
 
     .jumbotron .btn-primary {
-      background: #845ac7;
-      border-color: #845ac7
+      background: #000000;
+      border-color: #000000;
     }
 
     .jumbotron .btn-primary:hover {
-      background: #7646c1
+      background: #6F6F6F;
     }
 
     .jumbotron p {
-      color: #d9ccee;
+      color: #ffffff;
       max-width: 75%;
       margin: 1em auto 2em
     }
@@ -82,7 +82,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-heart"></span> Heart Disease Detection
+            aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-heart"></span> Cardiac Disease Detection
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/classifier/">Prediction Tool</a>

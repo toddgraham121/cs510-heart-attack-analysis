@@ -5,12 +5,16 @@
 
 <div class="jumbotron text-center">
     <div class="container">
-        <h1>Classification:</h1>
+        <h1>Prediction:</h1>
         <br>
-        <h1>{{ result }}</h1>
+        <h3>{{ result }}</h3>
     </div>
 </div>
-<div class="text-center">
+<div class="container text-center">
+    <div class="alert alert-info text-center" role="alert">
+        Please note this model was trained with limited data so please consult your physician with any follow-up questions.
+    </div>
+    <br>
     <a href="/classifier/" class="btn btn-primary mb-2">Go Back</a>
 </div>
 {% endblock %}

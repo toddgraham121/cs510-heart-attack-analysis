@@ -59,8 +59,8 @@ def getPredictions(age, sex, chestPainScore, restingBP, cholesterol, fastingGluc
         [[age, sex, chestPainScore, restingBP, cholesterol, fastingGlucose, maxHeartRate, exerciseAngina]]))
 
     if prediction == 0:
-        return "No Cardiac Disease"
+        return "Our model predicts that you do NOT have Cardiovascular Disease"
     elif prediction == 1:
-        return "Cardiac Disease"
+        return "Our model predicts you may have Cardiovascular Disease"
     else:
         return "Error"
